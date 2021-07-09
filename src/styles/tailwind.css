@@ -11387,6 +11387,35 @@ video {
   z-index: auto;
 }
 
+.row {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row
+}
+
+.box {
+  display: -webkit-box;
+  display: flex;
+  border-width: 2px;
+  border-color: #000;
+  -webkit-box-flex: 1;
+          flex-grow: 1;
+  height: 5rem
+}
+
+.selected {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 1;
+          flex-grow: 1;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;

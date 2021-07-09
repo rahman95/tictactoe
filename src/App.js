@@ -1,44 +1,29 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
+import Row from "./components/Row";
 
 function App() {
+  const [moves, setMoves] = useState({
+    X: ["top-1", "mid-2", "bottom-1"],
+    O: ["top-2", "mid-1", "bottom-3"],
+  });
+
+  // const relevantMoves = moves.flatMap((user) => {
+  //   return user.map((move) => {
+  //     return { [move]: user };
+  //   });
+  // });
+
+  // console.log({ relevantMoves });
+
   return (
-    <div className="App">
-      <div className="w-full max-w-md bg-gray-800">
-        <form action="" className=" bg-white shadow-md rounded px-8 py-8 pt-8">
-          <div className="px-4 pb-4">
-            <label htmlFor="email" className="text-sm block font-bold  pb-2">
-              EMAIL ADDRESS
-            </label>
-            <input
-              type="email"
-              name="email"
-              id=""
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300 "
-              placeholder="Johnbull@example.com"
-            />
-          </div>
-          <div className="px-4 pb-4">
-            <label htmlFor="password" className="text-sm block font-bold pb-2">
-              PASSWORD
-            </label>
-            <input
-              type="password"
-              name="email"
-              id=""
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300"
-              placeholder="Enter your password"
-            />
-          </div>
-          <div>
-            <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
-            >
-              Sign In
-            </button>
-          </div>
-        </form>
+    <div className="w-full h-full flex justify-center">
+      <div
+        id="gameboard"
+        className="flex flex-col border-2 border-black m-1 w-1/2"
+      >
+        <Row name="top" moves={moves} />
+        <Row name="mid" moves={moves} />
+        <Row name="bottom" moves={moves} />
       </div>
     </div>
   );
