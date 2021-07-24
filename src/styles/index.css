@@ -4,14 +4,51 @@
 
 @tailwind utilities;
 
+:root {
+    --grey: #b2bec3;
+    --blue-light: #74b9ff;
+    --blue-dark: #0984e3;
+    --red-light: #ff7675;
+    --red-dark: #d63031;
+  }
+
+.main {
+    @apply w-full h-full flex justify-center p-40;
+}
+
+.gameboard {
+    @apply flex flex-col border-2 border-black m-1 w-1/2;
+    height: 500px;
+    width: 500px;
+}
+
 .row {
-    @apply flex flex-row
+    @apply flex flex-row;
+    height: 100%;
 }
   
 .box {
-    @apply flex border-2 border-black flex-grow h-20
+    @apply flex border-2 border-black flex-grow;
+    width: 50px;
+}
+
+.box:hover {
+    background-color: var(--grey);
+    transition-timing-function: ease-out;
+    transition: 0.25s;
 }
 
 .selected {
-    @apply flex flex-grow justify-center items-center
+    @apply flex flex-grow justify-center items-center;
+    font-size: 5rem;
+}
+
+.o-selected {
+    background-color: var(--blue-light);
+    /* color: var(--blue-dark); */
+}
+
+.x-selected {
+    background-color: var(--red-light);
+    /* color: var(--red-dark); */
 }

@@ -7,20 +7,9 @@ function App() {
     O: ["top-2", "mid-1", "bottom-3"],
   });
 
-  // const relevantMoves = moves.flatMap((user) => {
-  //   return user.map((move) => {
-  //     return { [move]: user };
-  //   });
-  // });
-
-  // console.log({ relevantMoves });
-
   return (
-    <div className="w-full h-full flex justify-center">
-      <div
-        id="gameboard"
-        className="flex flex-col border-2 border-black m-1 w-1/2"
-      >
+    <div className="main">
+      <div className="gameboard">
         <Row name="top" moves={moves} />
         <Row name="mid" moves={moves} />
         <Row name="bottom" moves={moves} />
