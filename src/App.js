@@ -38,7 +38,10 @@ function App() {
   }, [])
 
   useEffect(() => {
-    console.log(userWon)
+    if(userWon) {
+      console.log(`User ${userWon} has won!`)
+    }
+    
   }, [userWon])
 
   const toggleNextUser = () => {
