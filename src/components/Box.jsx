@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Box = ({ name, moves }) => {
+const Box = ({ name, moves, selectBox }) => {
   const [isSelected, setSelected] = useState(false)
   const [userIcon, setUserIcon] = useState("")
 
@@ -16,8 +16,16 @@ const Box = ({ name, moves }) => {
     }
   }, [moves])
 
+  const handleClick = () => {
+    if(isSelected){
+      return 
+    }
+
+    selectBox(name)
+  }
+
   return (
-    <div name={name} className="box">
+    <div name={name} className="box" onClick={handleClick}>
       {isSelected && <span className={`selected ${userIcon === 'X' ? `x-selected` : `o-selected`}`}>{userIcon}</span>}
     </div>
   );
