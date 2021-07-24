@@ -14,7 +14,7 @@ const Box = ({ name, moves, selectBox }) => {
       setSelected(true)
       setUserIcon('O')
     }
-  }, [moves.X, moves.O, name])
+  }, [moves, name])
 
   const handleClick = () => {
     if(isSelected){
